@@ -1,5 +1,5 @@
-import { getPosts } from "../../../lib/wordpress";
-import BlogPage from "../../../src/js/pages/BlogPage/BlogPage";
+import { getPosts } from "../../lib/wordpress";
+import BlogPage from "../../src/js/pages/BlogPage/BlogPage";
 
 export const metadata = {
     title: "Blog",
