@@ -74,6 +74,14 @@ npm run lint
 
 Checks the code for errors using Next.js built-in ESLint configuration.
 
+## WordPress blank theme
+
+A ready-to-use blank WordPress theme designed to work with this starter is available at:
+
+**https://github.com/gaiusAmogus/blank-theme**
+
+It's a minimal WordPress theme that can be easily configured to expose the REST API data consumed by this Next.js frontend. Install it in your WordPress instance like any other theme.
+
 ## WordPress setup
 
 1. Go to **Settings → Permalinks** and choose any option other than "Plain".
