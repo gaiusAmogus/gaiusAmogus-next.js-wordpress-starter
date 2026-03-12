@@ -1,0 +1,17 @@
+{
+    "name": "gaiusAmogus-next.js-wordpress-starter",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "next": "^15.2.3",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "sass": "^1.94.0"
+    }
+}

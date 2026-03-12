@@ -1,0 +1,89 @@
+@use "colors" as colors;
+@use "fonts" as fonts;
+
+@mixin form-line-field {
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid colors.$green;
+	border-radius: 0;
+	background: transparent;
+	color: colors.$green;
+	padding: 0 0 12px;
+	outline: none;
+	box-shadow: none;
+	font-family: fonts.$ff-main;
+	font-size: 18px;
+
+	&::placeholder {
+		color: colors.$green;
+		opacity: 0.75;
+	}
+
+	&:focus { 
+		border-bottom-color: colors.$green;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="password"], 
+textarea {
+	@include form-line-field;
+}
+
+textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	width: 24px;
+	height: 24px;
+	border: 1px solid colors.$green;
+	border-radius: 50%;
+	background: transparent;
+	margin: 0;
+	position: relative;
+	cursor: pointer;
+	transition: border-color .2s ease, background-color .2s ease;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 5px;
+		border-radius: 50%;
+		background-color: colors.$green;
+		transform: scale(0);
+		transition: transform .2s ease;
+	}
+
+	&:checked::after {
+		transform: scale(1);
+	}
+}
+
+input[type="submit"],
+button[type="submit"] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 56px;
+	padding: 12px 32px;
+	border-radius: 999px;
+	border: 1px solid colors.$green;
+	background: transparent;
+	color: colors.$green;
+	cursor: pointer;
+	font-family: fonts.$ff-main;
+	font-size: 17px;
+	transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+
+	&:hover {
+		background-color: colors.$green;
+		color: colors.$black;
+	}
+}

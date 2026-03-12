@@ -1,0 +1,54 @@
+@use "colors" as colors;
+@use "fonts" as fonts;
+
+@mixin btn-hover-state($hover-color, $hover-bg, $icon-stroke: null) {
+    color: $hover-color;
+    background-color: $hover-bg;
+
+    @if $icon-stroke != null {
+        svg {
+            path {
+                stroke: $icon-stroke;
+            }
+        }
+    }
+}
+
+@mixin btn-variant($color, $border, $bg: transparent, $hover-color: $color, $hover-bg: $bg, $icon-stroke: null) {
+    color: $color;
+    border: 1px solid $border;
+    background-color: $bg;
+
+    &:hover {
+        @include btn-hover-state($hover-color, $hover-bg, $icon-stroke);
+    }
+
+    .btn-parent-hover:hover &,
+    .btn-parent-hover:focus-within & {
+        @include btn-hover-state($hover-color, $hover-bg, $icon-stroke);
+    }
+}
+
+.btn {
+    font-family: fonts.$ff-main;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 10px 20px;
+
+    &--primary {
+        @include btn-variant(colors.$green, colors.$green, transparent, colors.$dark-gray, colors.$green, colors.$dark-gray);
+    }
+
+    &--secondary {
+        @include btn-variant(colors.$black, colors.$green, colors.$green, colors.$white, colors.$green, colors.$white);
+    }
+
+    &--tertiary {
+        @include btn-variant(colors.$black, colors.$black, transparent, colors.$white, colors.$black, colors.$white);
+    }
+}

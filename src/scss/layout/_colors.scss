@@ -1,0 +1,40 @@
+$white: #FFFFFF;
+$black: #000000;
+$green: #2E8B57;
+$green-light: #5BBE1F;
+$dark-gray: #333333;
+$gray: #777777;
+$white-soft: #F6F6F6;
+$lime-glow: #B8FF66;
+$green-strong: #1E5F3A;
+$green-medium: #3F9E5E;
+$green-vivid: #39C56E;
+$green-muted: #A9C7B5;
+$white-frost: #F1F5F2;
+$green-fog: #DDEBE3;
+
+$colors: (
+    'white': $white,
+    'black': $black,
+    'green': $green,
+    'green-light': $green-light,
+    'dark-gray': $dark-gray,
+    'gray': $gray,
+    'white-soft': $white-soft,
+    'lime-glow': $lime-glow,
+    'green-strong': $green-strong,
+    'green-medium': $green-medium,
+    'green-vivid': $green-vivid,
+    'green-muted': $green-muted,
+    'white-frost': $white-frost,
+    'green-fog': $green-fog,
+);
+
+@each $name, $color in $colors {
+    .color--#{$name} {
+        color: $color;
+    }
+    .bg--#{$name} {
+        background-color: $color;
+    }
+}

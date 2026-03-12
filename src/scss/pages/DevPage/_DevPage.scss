@@ -1,0 +1,76 @@
+.page-dev {
+    padding: 24px 0 48px;
+
+    &__container {
+        padding-top: 24px;
+        padding-bottom: 48px;
+    }
+
+    &__row {
+        margin-top: 24px;
+    }
+
+    &__card {
+        padding: 24px;
+        border-radius: 12px;
+        display: grid;
+        gap: 10px;
+    }
+
+    &__card--dark {
+        .page-dev__inline-link {
+            color: inherit;
+        }
+    }
+
+    &__inline-link {
+        margin-top: 8px;
+    }
+
+    &__form-grid {
+        display: grid;
+        gap: 14px;
+        margin-top: 16px;
+    }
+
+    &__check-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    &__submit-row {
+        margin-top: 16px;
+        text-align: right;
+    }
+
+    &__btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    &__palette-row {
+        row-gap: 16px;
+        margin-top: 12px;
+    }
+
+    &__palette-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__swatch {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+}

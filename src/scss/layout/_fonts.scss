@@ -1,0 +1,197 @@
+@use "colors" as colors;
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+$ff-main: "Roboto", Arial, sans-serif;
+
+.ff{
+    &--main {
+        font-family: $ff-main;
+    }
+}
+
+body {
+    font-family: $ff-main;
+    color: colors.$white;
+}
+
+h1,h2,h3,h4,h5, h6{
+    font-family: $ff-main;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1{
+    font-size: 60px;
+    @media screen and (min-width: 992px) {
+        font-size: 90px;
+        line-height: 85px;
+    }
+}
+
+h2{
+    font-size: 40px;
+    @media screen and (min-width: 992px) {
+        font-size: 50px;
+        line-height: 40px;
+    }
+}
+
+h3{
+    font-size: 30px;
+    @media screen and (min-width: 992px) {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+}
+
+h4, h5, h6{
+    font-size: 23px;
+    @media screen and (min-width: 992px) {
+        font-size: 25px;
+        line-height: 31px;
+    }
+}
+
+.title{
+    font-family: $ff-main;
+    font-weight: 400;
+
+    &--1{
+        &, * {
+            font-size: 60px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 90px;
+                line-height: 85px;
+            }
+        }
+
+    }
+    &--2{
+        &, * {
+            font-size: 40px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 50px;
+                line-height: 40px;
+            }
+        }
+
+    }
+    &--3{
+        &, * {
+            font-size: 30px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 34px;
+                line-height: 40px;
+            }
+        }
+
+    }
+    &--4,
+    &--5,
+    &--6{
+        &, * {
+            font-size: 23px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 25px;
+                line-height: 31px;
+            }
+        }
+
+    }
+}
+
+
+.text {
+    font-family: $ff-main;
+    font-weight: 400;
+
+    &--1{
+        &, * {
+            font-size: 18px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 21px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    &--2{
+        &, * {
+            font-size: 15px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 17px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    &--3{
+        &, * {
+            font-size: 11px;
+        }
+        @media screen and (min-width: 992px) {
+            &, * {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+
+    }
+}
+
+p{
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+    @media screen and (min-width: 992px) {
+        font-size: 17px;
+        line-height: 26px;
+    }
+}
+
+span{
+    display: inline-block;
+    font-family: $ff-main;
+    font-weight: 400;
+    font-size: 15px;
+    @media screen and (min-width: 992px) {
+        font-size: 17px;
+        line-height: 26px;
+    }
+}
+
+a{
+    text-decoration: none;
+    transition: .2s ease; 
+    font-size: 15px;
+    color: colors.$green;
+    @media screen and (min-width: 992px) {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
