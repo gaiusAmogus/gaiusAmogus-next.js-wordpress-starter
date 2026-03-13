@@ -1,19 +1,38 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: "export",
+    distDir: "build",
     images: {
+        unoptimized: true,
+    },
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ["@svgr/webpack"],
+        });
+        return config;
+    },
+    images: {
+        unoptimized: true,
         remotePatterns: [
             {
-                // Allow images from your WordPress instance.
-                // Replace with your actual WordPress domain.
+                // Local WordPress instance via Laragon
                 protocol: "http",
-                hostname: "localhost",
+                hostname: "projectname.local",
                 pathname: "/**",
             },
             {
+                // Staging
                 protocol: "https",
-                hostname: "**.your-wp-domain.com",
+                hostname: "your-staging-domain.com",
                 pathname: "/**",
             },
+            // Production — currently same as staging, but can be changed in the future
+            // {
+            //     protocol: "https",
+            //     hostname: "api.skanbudynkow.pl",
+            //     pathname: "/**",
+            // },
         ],
     },
 };

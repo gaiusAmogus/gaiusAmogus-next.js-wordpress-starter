@@ -50,21 +50,18 @@ Starts the Next.js development server at `http://localhost:3000`.
 
 Changes in JS, JSX, and SCSS files are refreshed automatically.
 
-### Production build
+### Production build (static export)
 
 ```bash
-npm run build
+$env:WORDPRESS_API_URL="https://your-wp-url.com" ; npm run build
 ```
 
-Builds the project into the `.next/` directory. Ready for deployment.
+Builds the project into the `build/` directory as a fully static site (HTML/CSS/JS). Upload the contents of `build/` to your hosting via FTP — no Node.js required on the server.
 
-### Production server
-
+On Linux/Mac:
 ```bash
-npm run start
+WORDPRESS_API_URL=https://your-wp-url.com npm run build
 ```
-
-Starts the production server. Requires `npm run build` to be run first.
 
 ### Lint
 
@@ -73,14 +70,6 @@ npm run lint
 ```
 
 Checks the code for errors using Next.js built-in ESLint configuration.
-
-## WordPress blank theme
-
-A ready-to-use blank WordPress theme designed to work with this starter is available at:
-
-**https://github.com/gaiusAmogus/blank-theme**
-
-It's a minimal WordPress theme that can be easily configured to expose the REST API data consumed by this Next.js frontend. Install it in your WordPress instance like any other theme.
 
 ## WordPress setup
 
@@ -162,7 +151,7 @@ Files inside `public/` are served at the root path, e.g. `public/logo.svg` → `
         _DevPage.scss      # ui kit page styles
       NotFound/
         _NotFound.scss     # 404 page styles
-.next/                     # build output (generated, not committed)
+build/                     # static export output (generated, not committed)
 ```
 
 ## Adding new pages
