@@ -1,0 +1,17 @@
+Options -MultiViews
+
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# If the request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# For clean URLs — try to serve /path/index.html
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+)/?$ $1/index.html [L]
+
+# Fallback to 404
+RewriteRule ^ /404.html [L]
